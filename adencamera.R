@@ -46,7 +46,17 @@ d<- data.frame("DateAccess" = rep(Sys.Date(), length(ourPriceList)),
                "Price" = as.numeric(ourPriceList),
                "Notes" = notes)
 d <- d[with(d, order(Price, decreasing = TRUE)),]
-d
+rownames(d) <- 1:nrow(d)
+
+head(d)
+# DateAccess Brand                               Product Price Notes
+# 1 2014-05-04 Canon EF 200-400mm f4L IS USM Extender 1.4x 11600  Sale
+# 2 2014-05-04 Canon                EF 800mm f/5.6L IS USM 10949  Sale
+# 3 2014-05-04 Canon              EF 600mm f4.0L IS II USM 10849  Sale
+# 4 2014-05-04 Canon             EF 400mm f/2.8L IS II USM 10175  Sale
+# 5 2014-05-04 Canon                EF 500mm f4L IS II USM  8644  Sale
+# 6 2014-05-04 Canon              EF 300mm f2.8L IS II USM  6589  Sale
+
 
 
 ### Next steps:
